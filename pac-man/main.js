@@ -1,7 +1,7 @@
-const draw = () => {
-  const canvas = document.getElementById("example");
+function draw() {
+  var canvas = document.getElementById('example');
   if (canvas.getContext) {
-    const ctx = canvas.getContext("2d");
+    var ctx = canvas.getContext('2d');
 
     roundedRect(ctx, 12, 12, 150, 150, 15);
     roundedRect(ctx, 19, 19, 150, 150, 9);
@@ -15,15 +15,15 @@ const draw = () => {
     ctx.lineTo(31, 37);
     ctx.fill();
 
-    for (let i = 0; i < 8; i++) {
+    for (var i = 0; i < 8; i++) {
       ctx.fillRect(51 + i * 16, 35, 4, 4);
     }
 
-    for (let i = 0; i < 6; i++) {
+    for (i = 0; i < 6; i++) {
       ctx.fillRect(115, 51 + i * 16, 4, 4);
     }
 
-    for (let i = 0; i < 8; i++) {
+    for (i = 0; i < 8; i++) {
       ctx.fillRect(51 + i * 16, 99, 4, 4);
     }
 
@@ -41,7 +41,7 @@ const draw = () => {
     ctx.lineTo(83, 116);
     ctx.fill();
 
-    ctx.fillStyle = "white";
+    ctx.fillStyle = 'white';
     ctx.beginPath();
     ctx.moveTo(91, 96);
     ctx.bezierCurveTo(88, 96, 87, 99, 87, 101);
@@ -55,7 +55,7 @@ const draw = () => {
     ctx.bezierCurveTo(107, 99, 106, 96, 103, 96);
     ctx.fill();
 
-    ctx.fillStyle = "black";
+    ctx.fillStyle = 'black';
     ctx.beginPath();
     ctx.arc(101, 102, 2, 0, Math.PI * 2, true);
     ctx.fill();
@@ -64,22 +64,23 @@ const draw = () => {
     ctx.arc(89, 102, 2, 0, Math.PI * 2, true);
     ctx.fill();
   }
-};
+}
 
 // A utility function to draw a rectangle with rounded corners.
 
-const roundedRect = (ctx, x, y, width, height, radius) => {
+function roundedRect(ctx, x, y, width, height, radius) {
   ctx.beginPath();
   ctx.moveTo(x, y + radius);
   ctx.lineTo(x, y + height - radius);
   ctx.arcTo(x, y + height, x + radius, y + height, radius);
   ctx.lineTo(x + width - radius, y + height);
-  ctx.arcTo(x + width, y + height, x + width, y + height - radius, radius);
+  ctx.arcTo(x + width, y + height, x + width, y + height-radius, radius);
   ctx.lineTo(x + width, y + radius);
   ctx.arcTo(x + width, y, x + width - radius, y, radius);
   ctx.lineTo(x + radius, y);
   ctx.arcTo(x, y, x, y + radius, radius);
   ctx.stroke();
-};
+}
+
 
 draw();
