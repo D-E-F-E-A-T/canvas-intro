@@ -10,8 +10,9 @@ const draw = () => {
   ctx.arc(10, 10, 4, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.fill();
-  curvedBlock(ctx, 20, 20, 30);
-  curvedBlock(ctx, 20, 20, 40);
+  // curved quarter blocks
+  curvedQuarterBlock(ctx, 20, 20, 30);
+  curvedQuarterBlock(ctx, 20, 20, 40);
 };
 
 const roundedRect = (ctx, x, y, width, height, radius) => {
@@ -28,7 +29,7 @@ const roundedRect = (ctx, x, y, width, height, radius) => {
   ctx.stroke();
 };
 
-const curvedBlock = (ctx, x, y, r) => {
+const curvedQuarterBlock = (ctx, x, y, r) => {
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI/4);
   ctx.moveTo(x + r, y);
